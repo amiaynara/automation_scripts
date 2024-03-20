@@ -3,6 +3,10 @@
 # install homebrew
 echo "Installing homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# complete homebrew install
+echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/$USER/.zprofile
+eval $(/opt/homebrew/bin/brew shellenv)
+
 
 # install oh my zsh! => to add some bling
 echo "Installing omzsh..."
@@ -44,6 +48,9 @@ echo "Host github.com
   UseKeychain yes 
   IdentityFile ~/.ssh/id_
 " >> config
+
+# install the Github CLI
+brew install gh
 
 
 
