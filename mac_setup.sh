@@ -24,6 +24,21 @@ echo 'code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 
 # set python alias 
+echo 'alias python="python3"' >> $HOME/.zshrc
+echo 'alias pip="pip3"' >> $HOME/.zshrc
+source $HOME/.zshrc
+
+# python setup
+pip install virtualenvwrapper
+# get the path of virtualenvwrapper (suggested in the installation process)
+v_wrappper_path=''
+
+echo "
+  export PATH='\$PATH:$v_wrapper_path'
+  export WORKON_HOME=$HOME/.virtualenvs
+  export PROJECT_HOME=$HOME/Devel
+  source $v_wrapper_path/virtualenvwrapper.sh
+" >> $HOME/.zshrc
 
 
 
@@ -46,4 +61,11 @@ echo "Host github.com
 " >> config
 
 
+# install aws => https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+echo "setting up aws"
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg ./AWSCLIV2.pkg -target /
+which aws
+aws --version
+aws configure
 
