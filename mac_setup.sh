@@ -51,6 +51,7 @@ echo "Host github.com
 
 # install the Github CLI
 brew install gh
+gh auth login
 
 
 
