@@ -1,14 +1,14 @@
 #!/bin/bash
 
+echo "WARNING: This script will overwrite your ssh private key named : '~/.ssh/id_rsa', if it exists"
 while :
 do
-  echo "WARNING: This script will overwrite your ssh key named : ~/.ssh/id_rsa"
-  read -p "Press Y for yes N for no " -n 1 -r
+  read -p "Press y/n: " -n 1 -r
   if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "Sit back and relax! Setting up your mac..."
     break ### <<<---- terminate the loop
   fi
-  echo "You entered N/n"
+  echo "\nYou entered N/n"
 done
 
 # install homebrew
