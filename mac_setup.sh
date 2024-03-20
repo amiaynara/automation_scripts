@@ -1,5 +1,16 @@
 #!/bin/bash
 
+while :
+do
+  echo "WARNING: This script will overwrite your ssh key named : ~/.ssh/id_rsa"
+  read -p "Press Y for yes N for no " -n 1 -r
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "Sit back and relax! Setting up your mac..."
+    break ### <<<---- terminate the loop
+  fi
+  echo "You entered N/n"
+done
+
 # install homebrew
 echo "Installing homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
