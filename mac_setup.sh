@@ -61,7 +61,7 @@ touch config
 echo "Host github.com
   AddKeysToAgent yes
   UseKeychain yes 
-  IdentityFile ~/.ssh/id_
+  IdentityFile ~/.ssh/id_rsa
 " >> config
 
 # install the Github CLI
