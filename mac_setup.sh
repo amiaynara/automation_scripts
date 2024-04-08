@@ -88,3 +88,5 @@ which aws
 aws --version
 aws configure
 
+
+# install database (psql)
